@@ -1,0 +1,51 @@
+.htmlColumns{
+    height: 100%;
+}
+
+.bodyColumns{
+    height: 100%;
+}
+
+.mainColumnsSection{
+    min-height: 100%;
+    background-color: rgb(250, 247, 247);
+    display: grid;
+    /*Creamos un template-area para el maquetado general del sitio*/
+    grid-template:
+    "column1 column2 column3" 1fr / 1fr 1fr 1fr;
+}
+
+.column1{
+    grid-area: column1;
+}
+
+.column2{
+    grid-area: column2;
+}
+
+.column3{
+    grid-area: column3;
+}
+
+.columns{
+    padding: 25px;
+}
+
+/* Diseño para tabletas */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .mainColumnsSection{
+        grid-template:
+        "column1 column2" 1fr 
+        "column3 column3" auto / 1fr 1fr;
+    }
+}
+
+/* Diseño para teléfonos */
+@media screen and (max-width: 599px) {
+    .mainColumnsSection{
+        grid-template:
+        "column1" auto 
+        "column2" auto
+        "column3" auto / 1fr;
+    }
+}
